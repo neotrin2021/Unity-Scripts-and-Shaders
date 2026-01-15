@@ -26,13 +26,16 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _GERSTNER_ON
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _DISABLE_SSR_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2225
   stringTagMap: {}
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - TransparentBackface
+  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -86,7 +89,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 4d73a3f858933154c9e14f20e6abc2f9, type: 3}
         m_Scale: {x: 10, y: 10}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -109,14 +112,20 @@ Material:
     m_Floats:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
+    - _AlphaDstBlend: 0
+    - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
+    - _AlphaToMaskInspectorValue: 0
     - _Amplitude: 0.5
     - _Blend: 0
+    - _BlendMode: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
+    - _CullMode: 2
+    - _CullModeForward: 2
     - _Cutoff: 0.5
     - _DepthColour: 4
     - _DepthColourPower: 0.3
@@ -126,8 +135,14 @@ Material:
     - _DesaturateSurfaceTexture: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DoubleSidedEnable: 0
+    - _DoubleSidedGIMode: 0
+    - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
+    - _DstBlend2: 0
     - _DstBlendAlpha: 0
+    - _EnableBlendModePreserveSpecularLighting: 1
+    - _EnableFogOnTransparent: 1
     - _EnvironmentReflections: 1
     - _Float0: 14.44
     - _Float3: 1
@@ -152,10 +167,16 @@ Material:
     - _NormalfromHeight: 0
     - _NormalfromHeightStrength: 20
     - _OcclusionStrength: 1
+    - _OpaqueCullMode: 2
     - _Parallax: 0.005
+    - _PerPixelSorting: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _ReceivesSSR: 1
+    - _ReceivesSSRTransparent: 0
+    - _RenderQueueType: 1
+    - _RequireSplitLighting: 0
     - _Rotation: -45
     - _Smoothness: 0.75
     - _SmoothnessTextureChannel: 0
@@ -163,6 +184,17 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Steepness: 1
+    - _StencilRef: 0
+    - _StencilRefDepth: 8
+    - _StencilRefDistortionVec: 4
+    - _StencilRefGBuffer: 10
+    - _StencilRefMV: 40
+    - _StencilWriteMask: 6
+    - _StencilWriteMaskDepth: 9
+    - _StencilWriteMaskDistortionVec: 4
+    - _StencilWriteMaskGBuffer: 15
+    - _StencilWriteMaskMV: 41
+    - _SupportDecals: 1
     - _Surface: 0
     - _SurfaceTextureDesaturate: 0.9
     - _SurfaceTextureNoise: 0.65
@@ -170,6 +202,7 @@ Material:
     - _SurfaceTexturePower: 0.8
     - _SurfaceTextureRemapMax: 0.8
     - _SurfaceTextureRemapMin: 0.05
+    - _SurfaceType: 0
     - _TessEdgeLength: 16
     - _TessMax: 25
     - _TessMaxDisp: 25
@@ -183,10 +216,19 @@ Material:
     - _TransShadow: 0.5
     - _TransStrength: 50
     - _TransmissionShadow: 0.5
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentSortPriority: 0
+    - _TransparentWritingMotionVec: 0
+    - _TransparentZWrite: 0
+    - _UseShadowThreshold: 0
     - _WarpNoise: 1
     - _WarpNoiseScale: 1
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
+    - _ZTestDepthEqualForOpaque: 3
+    - _ZTestGBuffer: 4
+    - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
     - _Animation: {r: 3.14, g: 0, b: 0, a: 0}
@@ -195,7 +237,8 @@ Material:
     - _Colour: {r: 1, g: 1, b: 1, a: 1}
     - _DeepColour: {r: 0, g: 0.095150895, b: 0.27044016, a: 1}
     - _DepthHightlightColour: {r: 1.9496853, g: 4, b: 3.4432993, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _GridColour: {r: 0, g: 0, b: 0, a: 0.5019608}
     - _NoiseAnimation: {r: 0.3, g: 0.2, b: 2, a: 0}
     - _NoiseColour: {r: 1, g: 0, b: 0.6764755, a: 1}
